@@ -1,0 +1,9 @@
+path: ./dataset  # 或者你数据集实际所在路径
+train: images/train
+val: images/val
+
+nc: 4
+names: ['crack', 'debris', 'intrusion', 'water']
+
+task: detect
+obb: True
