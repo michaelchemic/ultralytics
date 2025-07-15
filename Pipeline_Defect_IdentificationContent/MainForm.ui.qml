@@ -43,20 +43,16 @@ Item {
             anchors.margins: 20
 
             Repeater {
-                model: ["数据标定", "视频处理", "AI检测", "批量处理", "生成PDF报告"]
+                model: ["数据标定", "视频处理", "照片处理", "生成报告"]
                 delegate: Button {
                     text: modelData
-                    font.pixelSize: 18
-                    background: Rectangle {
-                        color: "transparent"
-                    }
-                    contentItem: Text {
-                        text: modelData
-                        color: "white"
-                        anchors.centerIn: parent
+                    onClicked: {
+                        console.log("按钮点击:", modelData)
+                        backend.handleButtonClick(modelData)  // <- 这个必须写
                     }
                 }
             }
+
         }
     }
 
